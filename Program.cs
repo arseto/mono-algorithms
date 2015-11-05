@@ -12,7 +12,8 @@ namespace Algorithms
         {
             FIBONACCI = 1,
             BUBBLE_SORT = 2,
-            QUICK_SORT = 3
+            QUICK_SORT = 3,
+            PASCAL_TRIANGLE = 4
         }
 
         enum Sorting
@@ -27,6 +28,7 @@ namespace Algorithms
             Console.WriteLine("1. Fibonacci");
             Console.WriteLine("2. Bubble Sort");
             Console.WriteLine("3. Quick Sort");
+            Console.WriteLine("4. Pascal Triangle");
 
             Algorithm option = TryGetAlgorithmOption();
 
@@ -36,9 +38,28 @@ namespace Algorithms
                 BubbleSortSequence();
             else if (option == Algorithm.FIBONACCI)
                 FibonacciSequence();
+            else if (option == Algorithm.FIBONACCI)
+                FibonacciSequence();
+            else if (option == Algorithm.PASCAL_TRIANGLE)
+                PascalTriangleSequence();
             
             Console.ReadKey();
+            Console.WriteLine("Exit");
 		}
+
+        private static void PascalTriangleSequence()
+        {
+            Console.WriteLine("Input the size of pascal triangle:");
+            int size = TryGetIntInput();
+
+            PascalTriangle pascal = new PascalTriangle(size);
+            string[] rows = pascal.GenerateTriangleStr();
+
+            foreach (var row in rows)
+            {
+                Console.WriteLine(row);
+            }
+        }
 
         private static void FibonacciSequence()
         {

@@ -8,6 +8,7 @@ namespace Algorithms
 {
 	class Program
 	{
+        //tambah comment ga jelas di program.cs
         enum Algorithm
         {
             FIBONACCI = 1,

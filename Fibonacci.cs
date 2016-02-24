@@ -21,9 +21,18 @@ namespace Algorithms
 
         public static int GetItemValue(int itemIdx)
         {
-            if (itemIdx == 0) return 0;
-            if (itemIdx == 1) return 1;
-            return GetItemValue(itemIdx - 2) + GetItemValue(itemIdx - 1);
+            if (itemIdx == 0 || itemIdx == 1) return itemIdx;
+            //return GetItemValue(itemIdx - 2) + GetItemValue(itemIdx - 1);
+            int firstnumber = 0;
+            int secondnumber = 1;
+            int result = 0;
+            for (int x = 2; x <= itemIdx; x++)
+            {
+                result = firstnumber + secondnumber;
+                firstnumber = secondnumber;
+                secondnumber = result;
+            }
+            return result;
         }
 
     }
